@@ -1,0 +1,1401 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta property="og:image" rel="static/engineering.jpg" />
+    <meta property="og:title" content="Introduction To VEX Sensors" />
+    <meta property="og:description"
+        content="Robotics programming can be daunting to new members, but it does not need to be." />
+    <meta property="og:url" content="https://2602b.github.io/IntroductionToVEXProgramming/" />
+    <!-- logo -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/favicon.png" />
+
+    <style>
+        /* scroll bar */
+        ::-webkit-scrollbar {
+            background-color: #f1f1f1;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+
+        html>body {
+            line-height: normal;
+            font-family: 'Lato', sans-serif;
+            margin-left: 12%;
+            margin-right: 12%;
+        }
+
+        #content {
+            clear: both;
+            padding: 15px;
+            min-height: 395px;
+        }
+
+        #global {
+            float: right;
+            padding: 5px 0px;
+        }
+    </style>
+    <title>Introduction To VEX Sensors</title>
+    <style>
+        h3 {
+            margin-top: 25px !important;
+        }
+
+        h1 {
+            color: #4f4f4f;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: #4f4f4f;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #4f4f4f;
+            font-weight: 600;
+        }
+
+        b {
+            font-weight: bolder;
+            /* darker grey color */
+            color: #4f4f4f;
+
+        }
+
+        /* p {
+            font-size: 1em;
+
+            line-height: 1em;
+            color: #5F5F5F;
+            margin-top: 0;
+            margin-bottom: 15px;
+        } */
+        button {
+            color: #B00020;
+            text-decoration: underline dotted;
+            background-color: white;
+            border: none;
+        }
+
+        button:focus {
+            text-decoration: underline solid;
+            background-color: white;
+            border: none;
+            outline: none;
+        }
+
+        a {
+            color: #B00020;
+            text-decoration: underline dotted;
+        }
+
+        a:hover {
+            color: #B00020;
+            text-decoration: underline;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #E5E5E5;
+            color: #5F5F5F;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        th {
+            background-color: #e8e8e8;
+            color: #5F5F5F;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+            color: #5F5F5F;
+            margin: 0 0 10px 0;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Aligns items into a row */
+        .flex-item {
+            flex: 1 1 200px;
+            /* margin: 10px; */
+            /* padding: 10px; */
+            /* border: 1px solid #e8e8e8; */
+            /* border-radius: 5px; */
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        hr {
+            border: 1px solid #e8e8e8;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 40px;"></div>
+    <div>
+        <!-- <img src="static/Hopkinetics.png" height="75" width=auto> -->
+        <p>&nbsp;</p>
+        <div id="global">
+        </div>
+        <div id="content">
+            <ul>
+                <li style="float:right">By Joseph Marcinowski</li>
+            </ul>
+            <h1>Joseph's Programming Showcase</h1>
+            <p>
+                This website is intended to demonstrate some of the programming projects.</p>
+            <p>My resume can be found <a href="/Joseph_Marcinowski.pdf" target="_blank">here</a>.</p>
+            <p>You can contact me at <a href="mailto:joeymarcinowski@gmail.com">joeymarcinowski@gmail.com</a>.</p>
+            <div class="container mt-5 accordion" id="centerAccordion">
+                <table class="table">
+                    <colgroup>
+                        <col style="width: 33%" />
+                        <col style="width: 66%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>2023-2022 Projects</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-toggle="collapse" href="#accordion-1" role="button" aria-expanded="false"
+                            aria-controls="accordion-1">
+                            <td>
+                                <a>
+                                    Genetic Algorithm Route Creation
+                                </a>
+                            </td>
+                            <td>Using ML and the Genetic Algorithm to design autonomous routes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-1" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <h3>Problem Explanation:
+                                        </h3>
+                                        <p>VIDEO The Vex Robotics 2022-2023 game comprises of disks that must be shot
+                                            into elevated baskets to earn points. In one game mode, the robot skills
+                                            challenge, a team has one minute to score as many points as possible with
+                                            their driver or autonomous code. Since there's so little time to reach each
+                                            disk and shoot it into the basket, we must strive to find the route that
+                                            reaches the most disks possible (ideally all) in the least amount of time
+                                            possible.
+                                        </p>
+                                        <p>The question then becomes in what <i>order</i> is it best to visit all of the
+                                            scoring game elements, so that we can save time.
+                                        </p>
+                                        <h3>The Travelling Salesman:</h3>
+                                        <p>Suppose that you are a traveler in the United States. You may want to visit
+                                            all
+                                            the big cities as cost-effectively as possible and then ultimately return to
+                                            your home city. While traveling, it doesn’t make sense to return to any
+                                            previous
+                                            towns you’ve visited.</p>
+                                        <p>This is an example of the traveling salesman problem (TSP), where, the goal
+                                            is to navigate to each node only once, then return to the original node as
+                                            efficiently as possible.
+                                        </p>
+                                        <p>While it’s simple to understand, it’s one of the most difficult problems in
+                                            computer science to solve.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image6.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+
+                                        <p>If you wanted a definite solution to this problem, the only way is to
+                                            generate every possible order of cities there are, then test each order.
+                                            This method may sound good, but the number of permutations to check is equal
+                                            to the
+                                            factorial of the number of nodes you have, so going from a 4-node network to
+                                            a 5-node network is 5 times the values to check. For this reason,
+                                            calculating the optimal path for even 20 nodes is impractical. The problem
+                                            is classified as an NP-Hard problem, meaning you can’t determine its
+                                            solution in polynomial time.
+                                        </p>
+                                        <h3>Hamiltonian Cycles & Path:
+                                        </h3>
+                                        <p>In graph theory, a Hamiltonian path is a route through a graph in which the
+                                            route visits each node exactly once. This is different from a hamiltonian
+                                            cycle, which visits each node once but returns to its original start node,
+                                            completing a circuit uniting all the nodes together.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image5.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>The length of a hamiltonian cycle or path is the sum of all of its costs. For
+                                            example, consider the Hamiltonian path:</p>
+                                        <center>
+                                            <p>Boston → NYC → Washington D.C.<br>
+                                                Distance: 441 miles
+                                            </p>
+                                        </center>
+                                        <p>The length of the hamiltonian path could be the total distance of the route,
+                                            or it could be the total cost of transportation, and so on. In either case,
+                                            it has a lower hamiltonian length than:
+                                        </p>
+                                        <center>
+                                            <p>Boston → Washington D.C. → NYC<br>
+                                                Distance: 665 miles
+                                            </p>
+                                        </center>
+                                        <h3>The Genetic Algorithm:
+                                        </h3>
+                                        <p>The genetic algorithm mimics evolution in nature. Each successive generation
+                                            solves the solution to a particular problem a little bit better, then that
+                                            generation is used to create the next generation, and so on.
+                                        </p>
+                                        <ol>
+                                            <li>1. Generate 100 random solutions if there’s no previous generation</li>
+                                            <li>2. Randomly select 4 solutions</li>
+                                            <li>3. Evaluate the 4 solutions, pick the 2 best</li>
+                                            <li>4. Create a new solution by merging the 2 parent's solutions into 1</li>
+                                            <li>5. Finally, 1% of the time create a mutation by swapping some parts of
+                                                the
+                                                solutions order</li>
+                                            <li>6. Repeat [lines 2 - 6] until 100 new solutions are created</li>
+                                        </ol>
+                                        <p>This will create a new generation of solutions, then this new generation
+                                            would be used to create the next generation, and so on.
+                                        </p>
+                                        <h3>Implementation</h3>
+                                        <p>First, we want to create a way to represent a solution. In our case, we want
+                                            to optimize for the shortest distance, so it would be helpful to have the
+                                            VEX GPS coordinates of all the game scoring elements.
+                                        </p>
+                                        <p>Below is a list, and for every stack of disks and roller, the GPS coordinates
+                                            are recorded in a python tuple. This is analogous to a list of the GPS
+                                            coordinates
+                                            of every city you want to travel to.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image7.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>Second, we want a way to represent a solution. Since we want to visit all of
+                                            the
+                                            points, all of these points are present in the solution. The only thing that
+                                            differs
+                                            from solution to solution is the order in which these points are
+                                            placed.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image2.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>From these paths, we want to pick four random solutions and take
+                                            the best two solutions.
+                                            Before we can do this, we need a way to evaluate how effective a
+                                            particular solution is. In our case, we want to know the Hamiltonian length
+                                            in terms of distance. This is just the cumulative sum of distances, just
+                                            like evaluating the length of path between multiple cities.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image9.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>Next, we want to merge these two parent solutions to create a new solution.
+                                            This is called crossover, and there are quite a few ways to do it. If you’ll
+                                            like to read how this process works please look at the crossover section
+                                            below. Here, we combine the paths of two parents to make a new simular path,
+                                            then mutate the child 1% of the time.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image3.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>Finally, do this enough times to create an entirely new generation, then use
+                                            that generation as the parent generation for the next!
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image10.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <h3>Genetic Crossover</h3>
+                                        <p>There are several different ways to do a genetic crossover, and it largely
+                                            depends on the problem you are trying to solve.
+                                        </p>
+                                        <p>The easiest method of crossover is to do a 1-point crossover, which splits
+                                            the genome of the 2 parents' genomes, swaps their parts then join the
+                                            sequences together.
+                                        </p>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image4.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>This is the easiest to code and works just fine in most applications.
+                                            However, in this case, it
+                                            won’t work, since we need to preserve that each location appears once in the
+                                            solution. We’re aiming to change the order. Consider this example:
+                                        </p>
+                                        <table style="background-color: lightblue;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td>
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td>
+                                                <center>New York</center>
+                                            </td>
+                                            <td>
+                                                <center>Philadelphia</center>
+                                            </td>
+                                        </table>
+                                        <center>
+                                            <h5>+</h5>
+                                        </center>
+                                        <table style="background-color: lightsalmon;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td>
+                                                <center>New York</center>
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td>
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td>
+                                                <center>Philadelphia</center>
+                                            </td>
+                                        </table>
+                                        <center>
+                                            <h5>Yields</h5>
+                                        </center>
+                                        <table style="background-color: lightblue;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td>
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td style="background-color: lightsalmon;">
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td style="background-color: lightsalmon;">
+                                                <center>Philadelphia</center>
+                                            </td>
+                                        </table>
+                                        <p>In this case, the order wasn’t changed, Washington DC appears twice and the
+                                            city of New York is missing,
+                                            so a different algorithm is needed.
+                                        </p>
+                                        <h3>Order Crossover (OX1) Algorithm
+                                        </h3>
+                                        <p>This crossover method works as follows:
+                                        </p>
+                                        <ol>
+                                            <li>1. Select 1 segment of the first genome, then store it in the
+                                                corresponding child genome
+                                            </li>
+                                            <li>2. Starting after the copied segment, copy the remaining unused nodes
+                                                from the second genome into the child genome
+                                            </li>
+                                        </ol>
+                                        <table style="background-color: lightblue;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td>
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td>
+                                                <center>New York</center>
+                                            </td>
+                                            <td>
+                                                <center>Philadelphia</center>
+                                            </td>
+                                        </table>
+                                        <table style="background-color: lightsalmon;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td>
+                                                <center>New York</center>
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td>
+                                                <center>Washington DC</center>
+                                            </td>
+                                            <td>
+                                                <center>Philadelphia</center>
+                                            </td>
+                                        </table>
+                                        <center>
+                                            <p>First, select a random segment from genome 1 to copy
+                                            </p>
+                                        </center>
+                                        <table style="background-color: lightblue;">
+                                            <colgroup>
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                                <col style="width: 25%" />
+                                            </colgroup>
+                                            <td style="background-color: white;">
+                                                <!-- <center>New York</center> -->
+                                            </td>
+                                            <td>
+                                                <center>Boston</center>
+                                            </td>
+                                            <td>
+                                                <center>New York</center>
+                                            </td>
+                                            <td style="background-color: white;">
+                                                <!-- <center>Philadelphia</center> -->
+                                            </td>
+                                        </table>
+                                        <center>
+                                            <p>Starting after the copied segment, copy the remaining unused nodes from
+                                                the second genome into the child genome
+                                            </p>
+                                            <p>Here, Philadelphia goes in, since it’s not already in the child genome
+                                                and corresponds with the 2nd genome slot
+                                            </p>
+                                            <table style="background-color: lightblue;">
+                                                <colgroup>
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                </colgroup>
+                                                <td style="background-color: white;">
+                                                    <!-- <center>New York</center> -->
+                                                </td>
+                                                <td>
+                                                    <center>Boston</center>
+                                                </td>
+                                                <td>
+                                                    <center>New York</center>
+                                                </td>
+                                                <td style="background-color: lightsalmon;">
+                                                    <center>Philadelphia</center>
+                                                </td>
+                                            </table>
+                                            <center>
+                                                <p>Here, Washington DC fills the first slot, since going in the order of
+                                                    the 2nd genome:</p>
+                                                <br>
+                                                <p>New York can’t work since it was used
+                                                </p>
+                                                <p>Boston can’t work since it was used
+                                                </p>
+                                                <p>Washington DC does work since it’s next in line and unused
+                                                </p>
+                                            </center>
+                                            <table style="background-color: lightblue;">
+                                                <colgroup>
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                    <col style="width: 25%" />
+                                                </colgroup>
+                                                <td style="background-color: lightsalmon;">
+                                                    <center>Washington DC<center>
+                                                </td>
+                                                <td>
+                                                    <center>Boston</center>
+                                                </td>
+                                                <td>
+                                                    <center>New York</center>
+                                                </td>
+                                                <td style="background-color: lightsalmon;">
+                                                    <center>Philadelphia</center>
+                                                </td>
+                                            </table>
+                                        </center>
+                                        <h3>Results:</h3>
+                                        <center>
+                                            <img src="images/geneticAlgorithm/image1.png" alt="" width="200"><img
+                                                src="images/geneticAlgorithm/image8.png" alt="" width="200">
+                                            <br><br><br>
+                                        </center>
+                                        <p>The solution on the left is reaching the roller mechanism, while the solution
+                                            on the right includes the roller mechanism. Both routes were shorter then
+                                            what we had originally planned.</p>
+                                        <h3>Future improvements:
+                                        </h3>
+                                        <p>While these are effective (and optimal?) routes, the route assumes that the
+                                            driver is shooting disks as they go, so they won’t break the 3 disk storage
+                                            limit. In the real world, a driver may need to deviate to get closer to the
+                                            goal to score effectively.
+                                        </p>
+                                        <p>One way of planning these excursions is to implement them into the
+                                            generation. For example, I could modify the scoring mechanic so that for
+                                            each 3rd disk the solution has and if the current location is outside of
+                                            shooting distance, then add the distance to the shooting zone and then back
+                                            to the running total.
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-toggle="collapse" href="#accordion-2" role="button" aria-expanded="false"
+                            aria-controls="accordion-2">
+                            <td>
+                                <a>
+                                    PID Optimization with Machine Learning
+                                </a>
+                            </td>
+                            <td>Using Gradient Decent to Optimize PID gains</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-2" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <h3>An Analogy
+                                        </h3>
+                                        <p>Imagine you’re a baseball pitcher practicing your throws. Like all baseball
+                                            pitchers, your goal is to throw a baseball at the correct angle so that it
+                                            hits the catcher's glove. You throw your first baseball, and it goes too
+                                            high. You take a mental note of the angle you’ve thrown the ball at, and how
+                                            far the baseball has gone above the catcher. This time, you throw the ball
+                                            lower. The baseball sails much closer to the pitcher but is too low. Since
+                                            you’re closer to the target, you adjust slightly more upwards, throwing the
+                                            baseball, and you nail the throw.
+                                        </p>
+                                        <h3>Gradient Descent
+                                        </h3>
+                                        <p>Gradient descent is an optimization algorithm that refines variables like
+                                            these and is arguably the most fundamental procedure in machine learning.
+                                            Like the pitcher example, gradient descent takes a guess, calculates whether
+                                            it’s too high or low relative to the target, and refines its guess. Gradient
+                                            descent can optimize many different variables simultaneously, as long as you
+                                            can quantify how far off each metric was.
+                                        </p>
+                                        <p>Returning to the pitcher example, imagine if the arc was the path of the
+                                            ball, and the dot is the target.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image32.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>Gradient descent first says to find the error in the system. If the target is
+                                            4 meters away, we simply subtract the position of the ball (y(4) feet high)
+                                            from the target (4 feet).
+                                        </p>
+                                        MATH
+                                        <p>This is where our algorithm diverges from the simple example. The simplest
+                                            way to adjust the throw is proportional to the negative error. If you throw
+                                            the ball 1 foot too high, you aim 1 degree lower, if you throw the ball a
+                                            half foot too low, you aim half a degree up. It doesn’t need to be 1-to-1
+                                            adjustments, but just some proportionality constant.
+                                        </p>
+                                        <p>
+                                            The issue with this is it doesn’t work for all cases, imagine if we were
+                                            trying to adjust the a constant in our equation or if it was a cubic or
+                                            square root. The step sizes would be disproportionate to what we’re
+                                            changing, which is why we take the derivative.
+
+                                        </p>
+                                        <p>In machine learning, the most common loss function is squared error.
+                                        </p>
+                                        MATH
+                                        <p>In our case it’s easier to quantify the effectiveness of the algorithm using
+                                            this squared error, since if a robot were to overshoot then undershoot, the
+                                            error would always stay above 0, a lower squared error would always mean
+                                            better performance overall.
+                                        </p>
+                                        <p>To understand how we should affect our system now, we take the derivative of
+                                            the error with respect to the result.
+                                        </p>
+                                        <center>
+                                            MATH
+                                            Now to apply the chain rule:
+                                            MATH
+                                            therefore:
+                                            MATH
+                                        </center>
+                                        <h3>Applying to Robotics</h3>
+                                        <p>When using a PID controller to control turns, the wheels practically start
+                                            spinning in reverse at some point during the turn to stop as fast as
+                                            possible. This however is difficult to control, and takes fine tuning of
+                                            algorithm constants to get right.
+                                        </p>
+                                        <p>If you were to graph a poorly tuned PID turn, it would look something like
+                                            this:
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image34.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>The y-axis represents the robots nominal error (error between target and
+                                            current heading, so an error of 0 would be perfect). The x-axis represents
+                                            the time since the turn was executed in milliseconds.
+                                        </p>
+                                        <p>Since the robot had a negative nominal error on the interval 580, 640, it
+                                            means the robot overshot the turn, went past where it was supposed to end
+                                            before correcting itself.
+                                        </p>
+                                        <p>The robot is programmed to not end the turn unless the derivative of the
+                                            nominal error is 0.1. Meaning the robot’s rotation needs to be practically
+                                            stationary. If we instead applied normal breaking power, the robot would
+                                            continue to under or over shoot under it’s own momentum we allowed the robot
+                                            to correct itself first.
+                                        </p>
+                                        <p>When we were brainstorming how we could quantify what a perfectly tuned turn
+                                            would look like, we settled on looking at the local minimums. In this case,
+                                            the local minimum is -12 degrees. Meaning, the robot has overshot 12 extra
+                                            degrees past where it was supposed to stop.
+                                        </p>
+                                        <p>The opposite can also be true, when the robot stops too early.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image31.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>This is a less extreme example with better tuning. However, the robot did
+                                            stop too early and begin reversing it’s direction to compensate for it’s
+                                            excess speed. The local minimum here is only 2 degrees, but in early ML
+                                            training and without proper tuning this can again reach high into the double
+                                            digits.
+                                        </p>
+                                        <p>So what do we do?
+                                        </p>
+                                        <p>Well, the aim is to have no velocity at the angle which we’ve set it to turn
+                                            to. Meaning, we want the local minimum to occer at 0.
+                                        </p>
+                                        <p>On a graph, this would look like the motion blends seamlessly in with the
+                                            x-axis.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image37.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>Now to understand how we can tune this:
+                                        </p>
+                                        <center>
+                                            The PID output is defined as:
+                                            MATH
+                                        </center>
+                                        <p>Loosely speaking, the Kp constant controls how fast the robot responds to the
+                                            error overall. From our pitcher example, we said that if we’re 1 foot too
+                                            high then we should aim 1 degree down. In this system, we multiply however
+                                            far we were off by -1 to get how much we should adjust. Likewise, the Kp
+                                            constant here causes the robot to adjust faster while it’s far from it’s
+                                            target, and slow down when it’s close. It doesn’t make sense to change this
+                                            constant however as changing this would change our movement speed overall,
+                                            and we only want to control the last part of the term.
+                                        </p>
+                                        <p>The Ki gain adjusts the robot in cases of really small errors. In a
+                                            stand-alone PD controller without an integral part it’s difficult to adjust
+                                            the robot at 1 degree, since our motors are only getting 0.5 volt of power
+                                            if we had Kp=0.5, well, to overcome friction you may need more power then
+                                            that, so the robot may not move. The integral part says is to compound the
+                                            error over time. When compounding the error, the PID output would grow and
+                                            grow, until the robot finally overcomes friction and moves.
+                                        </p>
+                                        <p>Finally, the derivative gain responds to how fast the robot is approaching
+                                            it’s target. It’s this part of the equation that dampens movement and acts
+                                            as a brake. So it’s this part of the equation we should tune.
+                                        </p>
+                                        <h3>Ziegler-Nichols Algorithm
+                                        </h3>
+                                        <p>There is a well known heuristic to calculate an initial set of PID constants
+                                            called ziegler-nichols method. This algorithm is a heuristic and differs
+                                            quite a bit from reality, however, it’s a good starting point for the
+                                            mashine learning algorithms to start off from.
+                                        </p>
+                                        <p>First and foremost, you find Kcritical which is the Pd value where the robot
+                                            consistently overshoots to both sides in a wave. This wave at Kcritical is
+                                            neither growing in strength, nor deteriorating.
+                                        </p>
+                                        <p>Second you measure the wave’s oscillating period represented with Tu.
+                                        </p>
+                                        <p>For our robot, Kcritical=-2.1 and Tu=0.31 which is 310 milliseconds.
+                                        </p>
+                                        <p>Lastly you find the respective initial values on a look-up table, these
+                                            values are laboratory tested across many different control systems. For now,
+                                            we choose to use the Classic PID control type. Kp, Ki, Kd are the values we
+                                            want to calculate.</p>
+                                        <center>
+                                            <img src="images/gradientDescent/image35.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <h3>Connecting Gradient Decent
+                                        </h3>
+                                        <p>Now, we can match this to the pitcher example from before.
+                                        </p>
+                                        <p>When the robot has overshot it’s turn (if the local minimum is less 0) we can
+                                            increase the Pd gain by some amount and when the robot underturns we can
+                                            decrease the Pd gain.
+                                        </p>
+                                        <p>To do this as efficiently as possible and minimizing learning time, we follow
+                                            the gradient decent algorithm.
+                                        </p>
+                                        <p>First and foremost, we execute a turn with no derivative gain and monitor for
+                                            the local minimum.
+                                        </p>
+                                        <p>Local minimums are defined as where the derivative of the motion switches
+                                            from negative to positive. Here it is in code.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image36.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>We’re only interested in the first local minimum after the robot begins it’s
+                                            turn and none after, hence why we use a conditional to stop checking after
+                                            the fact. We’re also interested in the value at the local minimum, so we
+                                            store the nominal error.
+                                        </p>
+                                        <p>Finally, we calculate the derivative of the squared error and refine our
+                                            estimate of Kd.
+                                        </p>
+                                        <p>Our change to the initial guess shouldn’t be equal to the derivative,
+                                            otherwise the robot’s learning would jump all over the place and would
+                                            hardly refine itself. So we multiply the derivative by the learning rate.
+                                            Too slow and the robot would hardly learn anything, and too fast and the
+                                            robot may jump from making overly tuned turns to undertuned and jump back
+                                            and forth. We found a learning rate of 0.3 works for us.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image39.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>And here’s a graph of the robot’s learning over time of the real error to
+                                            turn number.
+                                        </p>
+                                        <center>
+                                            <img src="images/gradientDescent/image33.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p>As you can see the robot learned to make the perfect turn in less than 10
+                                            attempts, rerunning this yielded the same result. I was not able to match
+                                            this performance by tuning a PID controller by hand.
+                                        </p>
+                                        <p>Finally here is a video of the robot learning on hard-wood floors. If you
+                                            follow the placement of a corner, the robot hones in on making a more
+                                            precise 90 degree turn. When the robot uses GPS instead of inertial there is
+                                            no sliding.
+                                        </p>
+                                        <center>
+                                            <iframe width="374" height="665"
+                                                src="https://www.youtube.com/embed/Gv-RcgZgxUs"
+                                                title="Gain Gradient Decent" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                        </center>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-toggle="collapse" href="#accordion-3" role="button" aria-expanded="false"
+                            aria-controls="accordion-3">
+                            <td>
+                                <a>
+                                    Pure Pursuit Path Following Algorithm
+                                </a>
+                            </td>
+                            <td>Implementing the Pure Pursuit algorithm in Vex Robotics</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-3" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <h3>What is path-following?
+                                        </h3>
+                                        <p>Path following is an algorithm that keeps a vehicle traveling along a path.
+                                            It is helpful to guide the robot to any desired point while maintaining a
+                                            safe distance from extraneous disks and objects. In the video linked at the
+                                            end of this document, a robot managed to avoid obstacles following a
+                                            path.
+                                        </p>
+                                        <h3>What is the goal?
+                                        </h3>
+                                        <p>We aim to draw any curved arc on a VEX field and then have a robot follow the
+                                            curve. Since our robot was undergoing a redesign while I was working on
+                                            this, we used VEX Codev5
+                                            simulations and a dummy bot to develop this algorithm.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image3.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <center>
+                                            <p>Above is the Path Creator program. Using a computer mouse, we can draw
+                                                any curve and export it to 300-500 accurate GPS coordinates.
+                                            </p>
+                                        </center>
+                                        <h3>Path-Following Overview:
+                                        </h3>
+                                        <p> First and foremost, the robot must know its current position and heading.
+                                            Odometry and GPS are allowed in skills programming, but for simplicity in
+                                            simulation, we used GPS.
+                                        </p>
+                                        <p> Now that the robot knows its current x, y, and angle, it looks ahead of
+                                            itself forty centimeters, and this point is called the seek point.
+                                        </p>
+                                        <p> The seek point is analogous to the point you view when driving a car.
+                                            Generally speaking, it’s not enough information to know the car's current
+                                            position on the road. You must look ~15 seconds ahead of the car's position
+                                            and drive to that point, which keeps you on track.
+                                        </p>
+                                        <p> The path the robot follows is simply an array of points.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image8.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p> The next step for path following is to find the closest path point to the
+                                            seek point. Just as you turn to the segment of the road point closest to ~15
+                                            seconds away, the robot turns to the closest point on the path forty
+                                            centimeters away. As the robot gets closer to this point, it must target a
+                                            new one further away. This perpetual cycle is what gets the robot to follow
+                                            a path.
+                                        </p>
+                                        <p>
+                                            This step requires the help of another algorithm, the seek algorithm. For
+                                            the robot to drive to these targeted points, it must have a procedure to
+                                            drive to a single point.
+                                        </p>
+                                        <p> Essentially, the seek algorithm uses the robots x, y, and the targeted
+                                            points x and y. With the help of a little trigonometry; the robot can
+                                            calculate how many degrees left or right it must turn to face the targeted
+                                            point. From here, the robot simply drives forward, always adjusting its
+                                            course left and right. We will expand on this later in more detail.
+                                        </p>
+                                        <p> Finally, we get to the end of the path. The robot knows it’s at the end of
+                                            the path because the targeted point is the last in the path array. The robot
+                                            simply stops its movement then.
+                                        </p>
+                                        <h3>Implementation</h3>
+                                        <p>To work backward, the end goal is to call a path-following function, just
+                                            like this:
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image7.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p> The PID class controls the robot's turn reaction to being off-target. The
+                                            internal workings of PID are beyond the scope of this document, but in
+                                            this context, these three values control the turn behavior. With the optimal
+                                            values, the robot will turn quickly and not overshoot or undershoot. I have
+                                            already written about finding the optimal PID values in the section: PID
+                                            Optimization with Machine Learning.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image4.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <center>
+                                            <p>The FollowPath method.
+                                            </p>
+                                        </center>
+                                        <p>To walk through the code, we set the look-ahead distance to forty centimeters
+                                            (four hundred millimeters) and repeatedly drove to the target point on the
+                                            path. If the targeted point wasn’t the last, then the robot stopped.
+                                        </p>
+                                        <p>Each time the outer loop ran, a nested loop would go through all the path
+                                            points and find the closest to the seek point.
+                                        </p>
+                                        <p> One notable difference between the theory we discussed and the function is
+                                            the accumulation of distances.
+                                        </p>
+                                        <p> In the future, I plan to use machine learning to tune the PID controller
+                                            just as I did for simple turns. The metric to grade the PID controller is
+                                            the total distance the robot has spent from the line throughout a circuit
+                                            loop, updating its PID values to minimize path offset.
+                                        </p>
+                                        <p>There is a bug in the implementation shared. If all of the path points are
+                                            further than 9.9 billion millimeters away (9,999 kilometers) from the seek
+                                            point, then the robot will haphazardly target the first point, which may not
+                                            be the closest.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image5.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <center>
+                                            <p>The seek method.
+                                            </p>
+                                        </center>
+                                        <p> The seek method calculates the relative angle to the target between the
+                                            robot's current heading and the target. With a PID controller, the robot
+                                            turns to face the target while driving forward. It's’ worth noting that the
+                                            current_heading is = -GPS.heading() + 90 because VEX sets the y-axis on the
+                                            GPS 0 heading. While doing trigonometry, the X-axis is always considered 0
+                                            degrees, and the y-axis is considered 90. To make life simple, translated
+                                            vex’s GPS units to standard unit circle units so that I will not need to do
+                                            extraneous calculations in the trigonometry section.
+                                        </p>
+                                        <p> The angleToTarget() function largely utilizes the calculateRelativeAngle()
+                                            function.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image6.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <p> Lines 22-29 simply handle edge cases, like: “what if the robot is on the
+                                            target point?” and “what if the robot is on the same x-axis?” Doing
+                                            computations without these checks would to a division of 0 error and cause
+                                            problems.
+                                        </p>
+                                        <p> From 30 on, we simply compute the arctan of the angle (arctan tells us the
+                                            angle, in radians of the ratio of the opposite to adjacent triangle legs).
+                                        </p>
+                                        <p> It’s not enough to simply do arctan. For example, consider if the robot was
+                                            -100mm in the x direction and -100mm in the y direction from its target
+                                            (which should be a 225-degree heading). That angle would be different than
+                                            if the robot was 100mm in the x direction and 100mm in the y direction
+                                            (traveling at a 45-degree heading), the two angles should be 180 degrees
+                                            apart.
+                                        </p>
+                                        <p> Since arctan takes the ratio of the legs, both divide by 1, giving the same
+                                            angle, 45 degrees. To deal with this, a reference angle must be added
+                                            depending on the quadrant the robot is in relative to the targeted point. If
+                                            the robot is in quadrants 1 and 4, 180 could be added. And for quadrants 2
+                                            and 3, -180 needs to be added.
+                                        </p>
+                                        <p> Since this is the relative angle, it makes sense that if the robot was on
+                                            the track it should return 0 degrees, and -180 if it makes a full rotation.
+                                            To handle this, all degrees should be between -180 to 180 and appropriately
+                                            scaled.
+                                        </p>
+                                        <center>
+                                            <img src="images/pathFollowing/image10.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <center>
+                                            <p>Note: this is the standard way of converting to a real angle using a
+                                                reference angle, between 0 and 360 degrees. For our case, we want -180
+                                                to 180.
+                                            </p>
+                                        </center>
+                                        <h3>Final Result
+                                        </h3>
+                                        <p> The path following the prototype was a success. Below is a link to a video
+                                            of our dummy bot using the path following.
+                                        </p>
+                                        <center>
+                                            <iframe width="720" height="400"
+                                                src="https://www.youtube.com/embed/x1ZD7ZIna7o"
+                                                title="VEX Path Following Test" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                        </center>
+                                        <center>
+                                            <img src="images/pathFollowing/image2.png" alt="" width="400">
+                                            <br><br><br>
+                                        </center>
+                                        <center>
+                                            <iframe width="720" height="400"
+                                                src="https://www.youtube.com/embed/aiDS2cBqKWc"
+                                                title="Hall Comp Skills 1st Attempt" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                        </center>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- <tr data-toggle="collapse" href="#accordion-4" role="button" aria-expanded="false"
+                            aria-controls="accordion-4">
+                            <td>
+                                <a>
+                                    Forcasting VEX Worlds Matches
+                                </a>
+                            </td>
+                            <td>How I was able to predict the probibility of specific matches at Vex Worlds Dallas</td>
+                        </tr> -->
+                        <tr data-toggle="collapse" href="#accordion-5" role="button" aria-expanded="false"
+                            aria-controls="accordion-4">
+                            <td>
+                                <a>
+                                    Truck Driver Heart Rate Sensor
+                                </a>
+                            </td>
+                            <td>Creating a prototype heart rate safety device for a hackathon. [1st
+                                place]</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-5" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <center><iframe width="720" height="400"
+                                                src="https://www.youtube.com/embed/EVKv94C0ngU" title="DriverSafer"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe></center>
+                                        <h3>Inspiration
+                                        </h3>
+                                        <p>13% of all truck accidents occur as a result of sleep deprivation. 66% of all
+                                            truck drivers fall asleep at the wheel, and 13% have stated they have fallen
+                                            asleep at the wheel. This is not only detrimental to human lives, but also
+                                            damages supply chains, which are currently very important in the
+                                            post-pandemic economy.
+                                        </p>
+                                        <h3>What it does
+                                        </h3>
+                                        <p>A pulse sensor detects a driver's heart beat in bpm, and send that
+                                            information to a server, which then directs it to a mobile application
+                                            (cross-platform with React Native). The mobile application processes the
+                                            heart rate, counting the driver's average heart rate and detecting
+                                            significant changes that indicate the driver is falling asleep or other
+                                            potential dangers. The app will then notify the driver with bright text and
+                                            an alarm.
+
+                                        </p>
+                                        <h3>How we built it
+                                        </h3>
+                                        <p>The heart sensor comes from a set of sensors (37 in 1 kit) which attaches to
+                                            an Arduino Uno. The heart beat is measured up to 8 bits of accuracy, and
+                                            each bit is individually sent to a Raspberry Pi. The Raspberry Pi then sends
+                                            that information out with an API to a React Native app, which first
+                                            calibrates to determine the user's average heart rate, and then measures
+                                            significant deviations which may indicate danger.
+                                        </p>
+                                        <h3>Challenges we ran into
+                                        </h3>
+                                        <p>We tried to originally use the Raspberry Pi directly to listen to the user's
+                                            heart rate, but it turned out that the Raspberry Pi did not support analog
+                                            signal, and so we had to use an Arduino, which supports analog signal, then
+                                            turn it into digital signal, and send the signal in 8 bits to the Raspberry
+                                            Pi. We spent a majority of time trying to connect the Arduino with the
+                                            Raspberry Pi. It took 6 hours to figure out that the two microcontrollers
+                                            were connected to two different power sources, and that caused the signal to
+                                            become noisy. While we were building the mobile application we resorted to
+                                            using an API to emulate the heart rate until we got both working.
+
+                                        </p>
+                                        <h3>Accomplishments that we're proud of
+                                        </h3>
+                                        <p>Figuring out everything with the Arduino and the Raspberry Pi, which was
+                                            completely new to us, and also figuring out React Native, which we all also
+                                            did not know very well, especially state management.
+
+                                        </p>
+                                        <h3>What we learned
+                                        </h3>
+                                        <p>Electrical engineering is hard, and we know now that electricity is very
+                                            fickle. Also, React Native is somewhat difficult to work with, but in some
+                                            cases does provide a nice way to organize UI.
+                                        </p>
+                                        <p>The Devpost link: <a
+                                                href="https://devpost.com/software/drivesafer-k1aozv">DriverSafer</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-toggle="collapse" href="#accordion-7" role="button" aria-expanded="false"
+                            aria-controls="accordion-1">
+                            <td>
+                                <a>
+                                    IntelliWaste
+                                </a>
+                            </td>
+                            <td>Smart trashcan project to encourage recycling for a hackathon. [Honorable Mention]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-7" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <center>
+                                            <iframe width="720" height="400"
+                                                src="https://www.youtube.com/embed/xvdXkLp_ajA" title="IntelliWaste"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                        </center>
+                                        <h3>Inspiration</h3>
+                                        <p>Recycling and composting is only effective when people have the motivation to
+                                            do so- and it is largely evident that many people don't have that
+                                            motivation. But competition is a very effective motivator, and when the
+                                            requirements to compete are simple, people are further engaged. Therefore,
+                                            we had the idea of creating a trashcan that not only slows down the
+                                            generation of waste that goes into landfills, but also keeps people
+                                            continuously engaged in the act of recycling and/or composting. We introduce
+                                            the IntelliWaste.
+                                        </p>
+                                        <h3>What it does
+                                        </h3>
+                                        <p>The IntelliWaste itself is a trashcan cover that simply weighs the amount of
+                                            trash inside of the trashcan that it is on. However, the real magic lies in
+                                            the web server that the IntelliWaste sends its output to. The web server
+                                            displays the current weight of the trash inside of the IntelliWaste's
+                                            trashcan, and also contains a leaderboard displaying the IntelliWaste users
+                                            with the lowest weight in their trashcan. In this way, we not only fuel
+                                            competition for the lowest amount of landfill waste produced, but we also
+                                            keep people engaged in keeping the world clean through their need to be at
+                                            the top of the leaderboard.
+                                        </p>
+                                        <h3>How we built it
+                                        </h3>
+                                        <p>We built the IntelliWaste (more specifically a prototype) using an ESP32
+                                            microcontroller and an ultrasonic sensor. The ultrasonic sensor determines
+                                            how much waste is inside of the trashcan, and from that information we can
+                                            roughly determine the weight of the waste as well. The microcontroller then
+                                            sends a GET request to our web server, which updates the value of the trash
+                                            weight for that IntelliWaste user. That information then gets sorted and
+                                            displayed on the leaderboard, and is updated every refresh. The web server
+                                            was built using Flask, and the users, as well as their corresponding trash
+                                            weights, are stored in a database made with SQLite.
+                                        </p>
+                                        <h3>Challenges we ran into
+                                        </h3>
+                                        <p>We originally wanted the IntelliWaste to be a simple scale; however, we did
+                                            not have access to a piezoelectric sensor. We attempted to use one by taking
+                                            apart a regular commercial scale, but those attempts failed, and we were
+                                            left with about 16 hours left to complete the hackathon. It seemed dire, but
+                                            we had an ultrasonic sensor left behind from a previous project, and we
+                                            managed to substitute the scale with the sensor. We also had a problem when
+                                            we realized we needed to provide a live demonstration of our project, as we
+                                            did not think we would need to deploy the website. However, we managed to
+                                            scrape with ngrok, although it is a bit of a rough fix.
+                                        </p>
+                                        <h3>Accomplishments that we're proud of
+                                        </h3>
+                                        <p>Being able to finish the hackathon despite our shortened time, as well as
+                                            pulling off an allnighter and writing functional backend code. It's
+                                            especially nice that we have a prototype to show off in our video, since It
+                                            work completely (there is trash inside of the trashcan that is being
+                                            measured by the website).
+                                        </p>
+                                        <h3>What we learned
+                                        </h3>
+                                        <p>We learned that commercial scales do not have viable piezoelectric sensors.
+                                            However, at the same time, I think we had good review on both backend and
+                                            frontend development- and the fact that the website is accessible is a nice
+                                            lil' bonus on top.
+                                        </p>
+                                        <h3>What's next for IntelliWaste
+                                        </h3>
+                                        <p>Weekly charts, proper readings, and a nice, clean leaderboard. A functioning
+                                            login system, and maybe even rewards for the top legitimate IntelliWaste
+                                            users. There's lots of things we could do to continue this project, both
+                                            frontend and backend, that would significantly improve the quality of the
+                                            project and the user experience.
+                                        </p>
+                                        <p>The Devpost link: <a
+                                                href="https://devpost.com/software/intelliwaste">IntelliWaste</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <colgroup>
+                        <col style="width: 33%" />
+                        <col style="width: 66%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>2022-2021 Projects</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-toggle="collapse" href="#accordion-6" role="button" aria-expanded="false"
+                            aria-controls="accordion-1">
+                            <td>
+                                <a>
+                                    Implementation of PID
+                                </a>
+                            </td>
+                            <td>Implementing a PID controller for the purpose of controlling a robots turns</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="p-0">
+                                <div class="collapse" id="accordion-6" data-bs-parent="#centerAccordion">
+                                    <div class="card card-body">
+                                        <!-- <h3>Understanding How PID Controllers Work</h3>
+                                        <p>All PID systems need 3 things, a feedback input, a system output, and some
+                                            code to manipulate the output. In our case, the feedback input is used with
+                                            a gyro from the VEX inertial sensor, the output is the voltage to the motors
+                                            (one side spinning in reverse). While the program is running, I will specify
+                                            a target heading, which would create an error difference in code,
+                                            recalculating the motor voltages.</p>
+                                        <p>The PID controller is tuned using 3 variables, (Kp, Ki, Kd) each change
+                                            their corresponding equation to be more in tune, or out of tune. Lastly each
+                                            of these equations has an input variable which is the error between where it
+                                            is and the programmed target heading.</p>
+                                        <h3>Proportional Control</h3>
+                                        <p>Proportional control reacts only to how far the robot is away from it’s
+                                            target.
+                                            When it has a greater error, the robot will spin faster, when it has a lower
+                                            error,
+                                            the robot will spin slower. By itself, this is a poor control loop to use
+                                            because
+                                            the robot will always end in an oscillation between pointing left, than
+                                            right. The
+                                            second issue is that it only works for large errors, like when it’s +20
+                                            degrees off,
+                                            When the error is too small (i.e 2 degrees), the output will be too small
+                                            and the
+                                            robot won’t turn.</p>
+                                        <center>MATH</center>
+                                        <h3>Integral Control</h3>
+                                        <p>Integral control allows the robot to turn for very small angles. It does this
+                                            by repeatably summing itself so the output of the equation is always
+                                            growing,
+                                            unless the error is 0. On the robot, this looks like the motors will keep
+                                            speeding
+                                            up any time the robot isn’t turning towards it’s target. For smaller angles,
+                                            this
+                                            works well, but for larger angles it has the issue of massively
+                                            overshooting. The
+                                            way we got around that is we set Ki (the variable to tune this equation) to
+                                            0
+                                            for any angle greater than 20 degrees, anything else and it’ll be 0.005.</p>
+                                        <center>
+                                            MATH
+                                            <p>In code, it’s much simpler to understand</p>
+                                            CODE
+                                        </center>
+                                        <h3>Derivative Control</h3>
+                                        <p>Derivative control reacts to the speed the robot is turning at, When just
+                                            using
+                                            proportional or integral control the robot will continue to overshoot
+                                            because it’s
+                                            not programmed to stop the turn comfortably. Derivative control by itself
+                                            will
+                                            stop any left right accelerations by spinning the wheels opposite to the
+                                            direction
+                                            the hit came from. The issue is this control doesn’t tell the robot to turn
+                                            to a
+                                            specific point, it just stops any unwanted rotation so it must be used with
+                                            at
+                                            least proportional control.</p>
+                                        <center>
+                                            MATH
+                                            In code,
+                                            CODE
+                                        </center>
+                                        <h3>Wheel Voltage</h3>
+                                        <p>From here, it’s very simple to get the wheel voltage of each side.</p>
+                                        <center>
+                                            MATH
+                                        </center>
+                                        The system is capped at 12v on VEX motors
+                                    </div> -->
+                                        <object data="/PID_Notebook.pdf" type="application/pdf" width="100%"
+                                            height="500px">
+                                            <p>Unable to display PDF file. <a href="/PID_Notebook.pdf">Download</a>
+                                                instead.</p>
+                                        </object>
+                                    </div>
+                            </td>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Bootstrap JS and Popper.js scripts -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+        </div>
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
+                        }
+                    }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
+	// ]]>
+        </script>
+</body>
+
+</html>
