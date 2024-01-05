@@ -19,8 +19,6 @@
     <meta property="og:title" content="Introduction To VEX Sensors" />
     <meta property="og:description"
         content="Robotics programming can be daunting to new members, but it does not need to be." />
-    <meta property="og:url" content="https://2602b.github.io/IntroductionToVEXProgramming/" />
-    <!-- logo -->
     <link rel="shortcut icon" type="image/x-icon" href="static/favicon.png" />
 
     <style>
@@ -42,6 +40,14 @@
             font-family: 'Lato', sans-serif;
             margin-left: 12%;
             margin-right: 12%;
+        }
+
+        @media (max-width: 767px) {
+            html>body {
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
 
         #content {
@@ -172,7 +178,6 @@
 <body>
     <div style="margin-top: 40px;"></div>
     <div>
-        <!-- <img src="static/Hopkinetics.png" height="75" width=auto> -->
         <p>&nbsp;</p>
         <div id="global">
         </div>
@@ -1270,76 +1275,6 @@
                             <td colspan="2" class="p-0">
                                 <div class="collapse" id="accordion-6" data-bs-parent="#centerAccordion">
                                     <div class="card card-body">
-                                        <!-- <h3>Understanding How PID Controllers Work</h3>
-                                        <p>All PID systems need 3 things, a feedback input, a system output, and some
-                                            code to manipulate the output. In our case, the feedback input is used with
-                                            a gyro from the VEX inertial sensor, the output is the voltage to the motors
-                                            (one side spinning in reverse). While the program is running, I will specify
-                                            a target heading, which would create an error difference in code,
-                                            recalculating the motor voltages.</p>
-                                        <p>The PID controller is tuned using 3 variables, (Kp, Ki, Kd) each change
-                                            their corresponding equation to be more in tune, or out of tune. Lastly each
-                                            of these equations has an input variable which is the error between where it
-                                            is and the programmed target heading.</p>
-                                        <h3>Proportional Control</h3>
-                                        <p>Proportional control reacts only to how far the robot is away from it’s
-                                            target.
-                                            When it has a greater error, the robot will spin faster, when it has a lower
-                                            error,
-                                            the robot will spin slower. By itself, this is a poor control loop to use
-                                            because
-                                            the robot will always end in an oscillation between pointing left, than
-                                            right. The
-                                            second issue is that it only works for large errors, like when it’s +20
-                                            degrees off,
-                                            When the error is too small (i.e 2 degrees), the output will be too small
-                                            and the
-                                            robot won’t turn.</p>
-                                        <center>MATH</center>
-                                        <h3>Integral Control</h3>
-                                        <p>Integral control allows the robot to turn for very small angles. It does this
-                                            by repeatably summing itself so the output of the equation is always
-                                            growing,
-                                            unless the error is 0. On the robot, this looks like the motors will keep
-                                            speeding
-                                            up any time the robot isn’t turning towards it’s target. For smaller angles,
-                                            this
-                                            works well, but for larger angles it has the issue of massively
-                                            overshooting. The
-                                            way we got around that is we set Ki (the variable to tune this equation) to
-                                            0
-                                            for any angle greater than 20 degrees, anything else and it’ll be 0.005.</p>
-                                        <center>
-                                            MATH
-                                            <p>In code, it’s much simpler to understand</p>
-                                            CODE
-                                        </center>
-                                        <h3>Derivative Control</h3>
-                                        <p>Derivative control reacts to the speed the robot is turning at, When just
-                                            using
-                                            proportional or integral control the robot will continue to overshoot
-                                            because it’s
-                                            not programmed to stop the turn comfortably. Derivative control by itself
-                                            will
-                                            stop any left right accelerations by spinning the wheels opposite to the
-                                            direction
-                                            the hit came from. The issue is this control doesn’t tell the robot to turn
-                                            to a
-                                            specific point, it just stops any unwanted rotation so it must be used with
-                                            at
-                                            least proportional control.</p>
-                                        <center>
-                                            MATH
-                                            In code,
-                                            CODE
-                                        </center>
-                                        <h3>Wheel Voltage</h3>
-                                        <p>From here, it’s very simple to get the wheel voltage of each side.</p>
-                                        <center>
-                                            MATH
-                                        </center>
-                                        The system is capped at 12v on VEX motors
-                                    </div> -->
                                         <object data="/PID_Notebook.pdf" type="application/pdf" width="100%"
                                             height="500px">
                                             <p>Unable to display PDF file. <a href="/PID_Notebook.pdf">Download</a>
